@@ -4,7 +4,7 @@ esmaspäev = ['Kõrgem matemaatika', 'Matemaatiline maailmapilt']
 teisipäev = ['Programmeerimine', 'Arvuti arhitektuur ja riistvara', 'Kõrgem matemaatika']
 kolmapäev = ['Matemaatiline maailmapilt', 'Sissejuhatus erialasse']
 neljapäev = ['Programmeerimine', 'Sissejuhatus erialasse', 'Kõrgem matemaatika']
-reede = ['Matemaatiline maailmapilt', 'Arvuti arhitektuur ja riistvara I']
+reede = ['Matemaatiline maailmapilt', 'Arvuti arhitektuur ja riistvara']
 
 skillid = {}
 day0()
