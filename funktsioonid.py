@@ -7,18 +7,29 @@ def day0():
     if osalemine:
         easygui.msgbox("Käisid infotunnis, tubli!", "kiitused")
     else:
-        easygui.msgbox('Jätsid loengus käimata!', 'Väga halb!')
+        easygui.msgbox('Jätsid infotunnis käimata!', 'Väga halb!')
 
 
-def day1(tunniplaan, skillid):
-    for tund in tunniplaan:
-        osalemine = easygui.ynbox("Kas tahad aine " + tund.lower() + " loengus  osaleda?", "Teine päev", ["Jah", "Ei"],
-                                  image="vanemuine46.png")
-        skillid[tund] = 0
-        if osalemine:
-            easygui.msgbox("Käisid loengus, tubli!", "kiitused")
-            if skillid[tund] < 100:
-                skillid[tund] += 1
+def day1(tunniplaan, lp, skillid):
+    i = 0
+    while i in range(len(lp)):
+        if lp[i] == "loeng":
+            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " loengus osaleda?", "Järgmine päev", ["Jah", "Ei"],)
+            if osalemine:
+                easygui.msgbox("Käisid loengus, tubli!", "kiitused")
+                if skillid[tunniplaan[i]] < 100:
+                    skillid[tunniplaan[i]] += 1
+                    i += 1
+            else:
+                easygui.msgbox('Jätsid loengus käimata!', 'Väga halb!')
+                i+=1
         else:
-            easygui.msgbox('Jätsid loengus käimata!', 'Väga halb!')
+            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " praktikumis osaleda?", "Järgmine päev")
+            if osalemine:
+                easygui.msgbox("Käisid praktikumis, tubli!","Kiitused")
+                if skillid[tunniplaan[i]] < 100:
+                    skillid[tunniplaan[i]] += 5
+                    i += 1
+            else:
+                easygui.msgbox("Jätsid praktikumis käimata!", "Väga halb!")
     return skillid
