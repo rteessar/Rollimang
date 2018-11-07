@@ -12,10 +12,10 @@ klp = ["praktikum","praktikum"]
 nlp = ["praktikum", "loeng", "praktikum"]
 rlp = ["praktikum","loeng"]
 
-ise = easygui.ynbox("Kas soovid ise õppida?","Jah""Ei","Enne mängu")
+ise = easygui.ynbox("Kas soovid ise õppida?","Enne mängu",["Jah","Ei"])
 
 
-if ise == false:
+if ise == False:
     skill = {"Programmeerimine":0,"Matemaatiline maailmapilt":0,"Sissejuhatus erialasse":0, "Kõrgem matemaatika":0,"Arvuti arhitektuur ja riistvara":0}
     day0()
     day1(teisipäev,tlp, skill)
@@ -34,3 +34,6 @@ if ise == false:
 # saab valida kuidas ülikooli astunud, erinevad võimalused annavad erinevaid boonuseid
 # Arvuti kalkuleerib kontrolltööst läbisaamise protsendi
 # Saab valida mis kell ärgata tahab järgmisel päeval ja kui ei ärka õigel ajal siis magab loengu maha
+
+#ÜLDINE:
+#Esimene box on mängu kirjeldus, mis asi kus on.
