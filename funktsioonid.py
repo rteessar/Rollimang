@@ -1,7 +1,7 @@
 import easygui
 
 
-def day0():
+def day0arvuti():
     osalemine = easygui.ynbox("Kas tahad infotunnis osaleda?", "Esimene päev", ["Jah", "Ei"],
                               image="vanemuine46.png")
     if osalemine:
@@ -10,7 +10,7 @@ def day0():
         easygui.msgbox('Jätsid infotunnis käimata!', 'Väga halb!')
 
 
-def day1(tunniplaan, lp, skillid):
+def day1arvuti(tunniplaan, lp, skillid):
     i = 0
     while i in range(len(lp)):
         if lp[i] == "loeng":
@@ -33,3 +33,16 @@ def day1(tunniplaan, lp, skillid):
             else:
                 easygui.msgbox("Jätsid praktikumis käimata!", "Väga halb!")
     return skillid
+
+#def day0ise():
+#    osalemine = easygui.ynbox("Kas tahad infotunnis osaleda?", "Esimene päev", ["Jah", "Ei"],
+#                              image="vanemuine46.png")
+#    if osalemine:
+#        kirjutamine = easygui.ynbox("Kas soovid märkmeid teha?")
+#        if kirjutamine:
+#            easygui.msgbox("Tegid infotunnis märkmeid.")
+#            global(märkmed) += "Infotund: Ainetele ja eksamitele registreerimine ÕIS'is" 
+#        easygui.msgbox("Käisid infotunnis, tubli!", "kiitused")
+#    else:
+#        easygui.msgbox('Jätsid infotunnis käimata!', 'Väga halb!')
+    
