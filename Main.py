@@ -12,6 +12,11 @@ klp = ["praktikum", "praktikum"]
 nlp = ["praktikum", "loeng", "praktikum"]
 rlp = ["praktikum", "loeng"]
 
+essanädal = {"Programmeerimine":"Pythonis saab joonistada turtle teegiga", "Arvuti arhitektuur ja riistvara":"Kursuse saab läbida puhtalt Jurgasega"}
+
+
+
+
 tutvustus = easygui.msgbox("""Tere tulemast Tartu ülikooli IT eriala simulatsiooni mängu. 
 Mäng põhineb Oskari ja Risto kogemusel ja nägemusel ülikoolist. Mängus saad käia loengutes, teha märkmeid ja
 kontrolltöid lahendada. On üritatud luua võimalikult reaalne simulatsioon ülikoolis käimisest.""", "Tutvustus", ok_button="Mängima!")
@@ -27,7 +32,10 @@ elif ise:
     skill = {"Programmeerimine": 0, "Matemaatiline maailmapilt": 0, "Sissejuhatus erialasse": 0,
              "Kõrgem matemaatika": 0, "Arvuti arhitektuur ja riistvara": 0}
     day0ise()
-    day1ise(teisipäev, tlp, skill)
+    day1ise(teisipäev, tlp, skill, essanädal)
+    day1ise(kolmapäev, klp, skill, essanädal)
+    day1ise(neljapäev, nlp, skill, essanädal)
+    day1ise(reede,rlp,skill,essanädal)
 
 # ISE ÕPPIDES:
 # Saab valida sugu, vastavalt soole saad õppejõude võrgutada
