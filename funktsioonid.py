@@ -91,7 +91,7 @@ def day1ise(tunniplaan, lp, skillid):
                     skillid[tunniplaan[i]] += 5
                     i += 1
             else:
-                easygui.msgbox("Jätsid praktikumis käimata!", "Väga halb!")
+                easygui.msgbox("Jätsid praktikumis käimata! ", "Väga halb!")
                 i += 1
     easygui.ynbox(str(märkmed))
     return skillid
