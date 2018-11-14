@@ -22,8 +22,7 @@ if not ise:
 elif ise:
     skill = {"Programmeerimine": 0, "Matemaatiline maailmapilt": 0, "Sissejuhatus erialasse": 0,
              "Kõrgem matemaatika": 0, "Arvuti arhitektuur ja riistvara": 0}
-    day0ise()
-    day1ise(teisipäev, tlp, skill)
+    esimene_nädal(teisipäev, kolmapäev, neljapäev, reede, tlp, klp, nlp, rlp, skill)
 
 # ISE ÕPPIDES:
 # Saab valida sugu, vastavalt soole saad õppejõude võrgutada
