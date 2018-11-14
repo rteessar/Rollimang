@@ -1,6 +1,7 @@
 import easygui
 
-märkmed = {"Infotund": "", "Kõrgem matemaatika": "", "Arvuti arhitektuur ja riistvara": "","Arvuti arhitektuur ja riistvara2": "",
+märkmed = {"Infotund": "", "Kõrgem matemaatika": "", "Arvuti arhitektuur ja riistvara": "",
+           "Arvuti arhitektuur ja riistvara2": "",
            "Matemaatiline maailmapilt": "", "Sissejuhatus erialasse": "", "Programmeerimine": ""}
 
 
@@ -67,21 +68,25 @@ def esimese_nädala_päevad(tunniplaan, lp, skillid):
                         märkmed["Programmeerimine"] += "Arenduskeskkonna Thonny paigaldamine"
                     if tunniplaan[i] == "Kõrgem matemaatika":
                         easygui.msgbox("Tegid aines " + tunniplaan[i].lower() + " märkmeid.")
-                        märkmed["Kõrgem matemaatika"] += "Maatriksiks nimetatakse m reast ja n veerust koosnevat ristkülikukujulist arvude tabelit."
+                        märkmed["Kõrgem matemaatika"] += "Maatriksiks nimetatakse m reast ja n veerust koosnevat " \
+                                                         "ristkülikukujulist arvude tabelit. "
                     if tunniplaan[i] == "Matemaatiline maailmapilt":
                         easygui.msgbox("Tegid aines " + tunniplaan[i].lower() + " märkmeid.")
-                        märkmed["Matemaatiline maailmapilt"] += "Matemaatika on kõikjal meie ümber. Kui me ei tunne matemaatika keelt, siis me suuda seda näha."
+                        märkmed["Matemaatiline maailmapilt"] += "Matemaatika on kõikjal meie ümber. Kui me ei tunne " \
+                                                                "matemaatika keelt, siis me suuda seda näha. "
                     if tunniplaan[i] == "Sissejuhatus erialasse":
                         easygui.msgbox("Tegid aines " + tunniplaan[i].lower() + " märkmeid.")
                         märkmed["Sissejuhatus erialasse"] += "Esmakursuslaste konverents"
                     if tunniplaan[i] == "Arvuti arhitektuur ja riistvara":
-                       if märkmed["Arvuti arhitektuur ja riistvara"] == "":
-                         easygui.msgbox("Tegid aines " + tunniplaan[i].lower() + " märkmeid.")
-                         märkmed["Arvuti arhitektuur ja riistvara"] += "(Esimene loeng) IBM projekteeris esimese PC arvuti"
-                       else:
-                            märkmed["Arvuti arhitektuur ja riistvara2"] += " (Teine loeng) Vähim aeg protsessori jaoks on üks takt"
-                else:
-                    easygui.msgbox("Sa ei teinud selles aines märkmeid.")
+                        if märkmed["Arvuti arhitektuur ja riistvara"] == "":
+                            easygui.msgbox("Tegid aines " + tunniplaan[i].lower() + " märkmeid.")
+                            märkmed[
+                                "Arvuti arhitektuur ja riistvara"] += "(Esimene loeng) IBM projekteeris esimese PC " \
+                                                                      "arvuti "
+                        else:
+                            märkmed[
+                                "Arvuti arhitektuur ja riistvara2"] += "(Teine loeng) Vähim aeg protsessori jaoks on " \
+                                                                       "üks takt "
                 if skillid[tunniplaan[i]] < 100:
                     skillid[tunniplaan[i]] += 1
                     i += 1
@@ -98,7 +103,6 @@ def esimese_nädala_päevad(tunniplaan, lp, skillid):
             else:
                 easygui.msgbox("Jätsid praktikumis käimata!", "Väga halb!")
                 i += 1
-    # easygui.msgbox(str(märkmed["Programmeerimine"]))
     return skillid
 
 
