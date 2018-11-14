@@ -4,8 +4,7 @@ märkmed = []
 
 
 def day0arvuti():
-    osalemine = easygui.ynbox("Kas tahad infotunnis osaleda?", "Esimene päev", ["Jah", "Ei"],
-                              image="vanemuine46.png")
+    osalemine = easygui.ynbox("Kas tahad infotunnis osaleda?", "Esimene päev", ["Jah", "Ei"])
     if osalemine:
         easygui.msgbox("Käisid infotunnis, tubli!", "kiitused")
     else:
@@ -41,8 +40,7 @@ def day1arvuti(tunniplaan, lp, skillid):
 
 
 def day0ise():
-    osalemine = easygui.ynbox("Kas tahad infotunnis osaleda?", "Esimene päev", ["Jah", "Ei"],
-                              image="vanemuine46.png")
+    osalemine = easygui.ynbox("Kas tahad infotunnis osaleda?", "Esimene päev", ["Jah", "Ei"])
     if osalemine:
         kirjutamine = easygui.ynbox("Kas soovid märkmeid teha?")
         if kirjutamine:
