@@ -68,8 +68,8 @@ def day1ise(tunniplaan, lp, skillid):
                     if tunniplaan[i] == "Programmeerimine":
                         easygui.msgbox("Tegid aines "+ tunniplaan[i].lower() +" märkmeid.")
                         märkmed.append("Infotund: Arenduskeskkonna Thonny paigaldamine\n")
-                    else:
-                        easygui.msgbox("Sa ei teinud aines  "+ tunniplaan[i].lower() +"  märkmeid.")
+                else:
+                    easygui.msgbox("Sa ei teinud selles aines märkmeid.")
                 if skillid[tunniplaan[i]] < 100:
                     skillid[tunniplaan[i]] += 1
                     i += 1
