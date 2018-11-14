@@ -12,6 +12,10 @@ klp = ["praktikum", "praktikum"]
 nlp = ["praktikum", "loeng", "praktikum"]
 rlp = ["praktikum", "loeng"]
 
+tutvustus = easygui.msgbox("""Tere tulemast Tartu ülikooli IT eriala simulatsiooni mängu. 
+Mäng põhineb Oskari ja Risto kogemusel ja nägemusel ülikoolist. Mängus saad käia loengutes, teha märkmeid ja
+kontrolltöid lahendada. On üritatud luua võimalikult reaalne simulatsioon ülikoolis käimisest.""", "Tutvustus", ok_button="Mängima!")
+
 ise = easygui.ynbox("Kas soovid ise õppida?", "Enne mängu", ["Ise", "Arvuti"])
 
 if not ise:
