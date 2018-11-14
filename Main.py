@@ -19,7 +19,7 @@ if not ise:
              "Kõrgem matemaatika": 0, "Arvuti arhitektuur ja riistvara": 0}
     day0arvuti()
     day1arvuti(teisipäev, tlp, skill)
-else:
+elif ise:
     skill = {"Programmeerimine": 0, "Matemaatiline maailmapilt": 0, "Sissejuhatus erialasse": 0,
              "Kõrgem matemaatika": 0, "Arvuti arhitektuur ja riistvara": 0}
     day0ise()

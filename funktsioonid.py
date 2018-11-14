@@ -1,6 +1,7 @@
 import easygui
 
-märkmed = []
+märkmed = {"Infotund": "", "Kõrgem matemaatika": "", "Arvuti arhitektuur ja riistvara": "",
+           "Matemaatiline maailmapilt": "", "Sissejuhatus erialasse": "", "Programmeerimine": ""}
 
 
 def day0arvuti():
@@ -45,12 +46,11 @@ def day0ise():
         kirjutamine = easygui.ynbox("Kas soovid märkmeid teha?")
         if kirjutamine:
             easygui.msgbox("Tegid infotunnis märkmeid.")
-            märkmed.append("Infotund: Ainetele ja eksamitele registreerimine ÕIS'is\n")
+            märkmed["Infotund"] += " Ainetele ja eksamitele registreerimine ÕIS'is"
         else:
             easygui.msgbox("Sa ei teinud infotunnis märkmeid.")
     else:
         easygui.msgbox('Jätsid infotunnis käimata!', 'Väga halb!')
-    print(märkmed)
 
 
 def day1ise(tunniplaan, lp, skillid):
@@ -61,11 +61,13 @@ def day1ise(tunniplaan, lp, skillid):
                                       ["Jah", "Ei"])
             if osalemine:
                 kirjutamine = easygui.ynbox("Kas soovid märkmeid teha?")
-
                 if kirjutamine:
                     if tunniplaan[i] == "Programmeerimine":
-                        easygui.msgbox("Tegid aines "+ tunniplaan[i].lower() +" märkmeid.")
-                        märkmed.append("Infotund: Arenduskeskkonna Thonny paigaldamine\n")
+                        easygui.msgbox("Tegid aines " + tunniplaan[i].lower() + " märkmeid.")
+                        märkmed["Programmeerimine"] += "Arenduskeskkonna Thonny paigaldamine"
+                    if tunniplaan[i] == "Arvuti arhitektuur ja riistvara":
+                        easygui.msgbox("Tegid aines " + tunniplaan[i].lower() + " märkmeid.")
+                        märkmed["Arvuti arhitektuur ja riistvara"] += "IBM projekteeris esimese PC arvuti"
                 else:
                     easygui.msgbox("Sa ei teinud selles aines märkmeid.")
                 if skillid[tunniplaan[i]] < 100:
@@ -80,12 +82,16 @@ def day1ise(tunniplaan, lp, skillid):
             if osalemine:
                 kirjutamine = easygui.ynbox("Kas soovid märkmeid teha?")
                 if kirjutamine:
-                    easygui.msgbox("Tegid infotunnis märkmeid.")
-                    märkmed.append("Infotund: Arenduskeskkonna Thonny paigaldamine\n")
+                    if tunniplaan[i] == "Kõrgem matemaatika":
+                        easygui.msgbox("Tegid aines " + tunniplaan[i].lower() + " märkmeid.")
+                        märkmed["Kõrgem matemaatika"] += "Olgu antud kaks m × n maatriksit A = (aij ) ja B = (bij )."
+                else:
+                    easygui.msgbox("Sa ei teinud selles aines märkmeid.")
                 if skillid[tunniplaan[i]] < 100:
                     skillid[tunniplaan[i]] += 5
                     i += 1
             else:
                 easygui.msgbox("Jätsid praktikumis käimata!", "Väga halb!")
                 i += 1
+    easygui.ynbox(str(märkmed))
     return skillid
