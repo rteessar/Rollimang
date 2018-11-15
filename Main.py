@@ -12,14 +12,38 @@ klp = ["praktikum", "praktikum"]
 nlp = ["praktikum", "loeng", "praktikum"]
 rlp = ["praktikum", "loeng"]
 
-essanädal = {"Programmeerimine":"Pythonis saab joonistada turtle teegiga", "Arvuti arhitektuur ja riistvara":"Kursuse saab läbida puhtalt Jurgasega"}
+essanädal = {"Programmeerimine": "Pythonis saab joonistada turtle teegiga",
+             "Arvuti arhitektuur ja riistvara": "Vähim aeg protsessori jaoks on üks takt.",
+             "Kõrgem matemaatika": "Maatriksiks nimetatakse m reast ja n veerust koosnevat ristkülikukujulist arvude tabelit.",
+             "Arvuti arhitektuur ja riistvara2": "IBM projekteeris esimese PC arvuti.",
+             "Matemaatiline maailmapilt": "Matemaatika on kõikjal meie ümber. Kui me ei tunne matemaatika keelt, siis me suuda seda näha.",
+             "Sissejuhatus erialasse": "Esmakursuslaste konverents"}
 
+teine_nädal={"Programmeerimine": "Muutujaid, mille väärtust suurendatakse igal tsükli sammul ühe võrra, nimetatakse loenduriteks.",
+             "Kõrgem matemaatika":"Suvalise n-järku ruutmaatriksi A korral kehtib AE = A, EA = A, kus E on n-järku ühikmaatriks.",
+             "Matemaatiline maailmapilt":"Valem F on kehtestatav parajasti siis, kui tema eitus ¬F ei ole samaselt tõene.",
+             "Arvuti arhitektuur ja riistvara":"Mälu, mille poole protsessor saab pöörduda oma siinide kaudu nimetatakse füüsiliseks mäluks",
+             "Arvuti arhitektuur ja riistvara2":"Registrite suurus näitab ka mitme bitise protsessoriga on tegu",
+             "Sissejuhatus erialasse":"Do it for the love of passion not for money!"}
 
+kolmas_nädal={"Programmeerimine": "Meetodeid ei ole vaja kunagi import-ida.",
+             "Kõrgem matemaatika":"Paarisfunktsioon on sümmeetriline y-telje suhtes. Paaritu funktsioon on sümmeetriline nullpunkti suhtes.",
+             "Matemaatiline maailmapilt":"Tühjaks hulgaks ∅ nimetatakse hulka, mis ei sisalda ühtegi elementi.",
+             "Arvuti arhitektuur ja riistvara":"Mälu ülesandeks on andmete ja programmide säilitamine.",
+             "Arvuti arhitektuur ja riistvara2":"Moore'i seadus põhineb arvutiriistvara ajalool ning ütleb, et mikrokiibil olevate transistoride arv kahekordistub iga kahe aasta järel.",
+             "Sissejuhatus erialasse":"Sinu eksamihinne on funktsioon ajast, mida sa panustad õpingutesse."}
 
+neljas_nädal={"Programmeerimine": "Python paneb lokaalsete muutujate nimekirja kokku funktsiooni koodis leiduvate omistuslausete põhjal.",
+             "Kõrgem matemaatika":"Piirväärtuse ühesus. Vaadeldavas protsessis saab funktsioonil olla ainult üks piirväärtus.",
+             "Matemaatiline maailmapilt":"Hulkade A ja B ühendiks nimetatakse hulka A ∪ B, A ∪ B = {x | x ∈ A ∨ x ∈ B}.",
+             "Arvuti arhitektuur ja riistvara":"Esimesena võeti pipeline kasutusele Intel 80486 protsessoris.",
+             "Arvuti arhitektuur ja riistvara2":"SLAT (Second Level Address Translation).",
+             "Sissejuhatus erialasse":"The first step: Don’t be anxious. Nature controls it all."}
 
 tutvustus = easygui.msgbox("""Tere tulemast Tartu ülikooli IT eriala simulatsiooni mängu. 
 Mäng põhineb Oskari ja Risto kogemusel ja nägemusel ülikoolist. Mängus saad käia loengutes, teha märkmeid ja
-kontrolltöid lahendada. On üritatud luua võimalikult reaalne simulatsioon ülikoolis käimisest.""", "Tutvustus", ok_button="Mängima!")
+kontrolltöid lahendada. On üritatud luua võimalikult reaalne simulatsioon ülikoolis käimisest.""", "Tutvustus",
+                           ok_button="Mängima!")
 
 ise = easygui.ynbox("Kas soovid ise õppida?", "Enne mängu", ["Ise", "Arvuti"])
 
@@ -28,6 +52,9 @@ if not ise:
              "Kõrgem matemaatika": 0, "Arvuti arhitektuur ja riistvara": 0}
     day0arvuti()
     day1arvuti(teisipäev, tlp, skill)
+    day1arvuti(kolmapäev, tlp, skill)
+    day1arvuti(neljapäev, tlp, skill)
+    day1arvuti(reede, tlp, skill)
 elif ise:
     skill = {"Programmeerimine": 0, "Matemaatiline maailmapilt": 0, "Sissejuhatus erialasse": 0,
              "Kõrgem matemaatika": 0, "Arvuti arhitektuur ja riistvara": 0}
@@ -35,7 +62,7 @@ elif ise:
     day1ise(teisipäev, tlp, skill, essanädal)
     day1ise(kolmapäev, klp, skill, essanädal)
     day1ise(neljapäev, nlp, skill, essanädal)
-    day1ise(reede,rlp,skill,essanädal)
+    day1ise(reede, rlp, skill, essanädal)
 
 # ISE ÕPPIDES:
 # Saab valida sugu, vastavalt soole saad õppejõude võrgutada

@@ -84,5 +84,5 @@ def day1ise(tunniplaan, lp, skillid, märkmenädal):
             else:
                 easygui.msgbox("Jätsid praktikumis käimata! ", "Väga halb!")
                 i += 1
-    easygui.msgbox(str(märkmed),"Tehtud märkmed")
+    easygui.textbox("Siin näed selle päeva jooksul erinevates loengutes tehtud märkmeid","Tehtud märkmed",str(märkmed))
     return skillid, märkmed
