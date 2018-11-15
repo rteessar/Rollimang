@@ -16,8 +16,7 @@ def day1arvuti(tunniplaan, lp, skillid):
     i = 0
     while i in range(len(lp)):
         if lp[i] == "loeng":
-            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " loengus osaleda?", "Järgmine päev",
-                                      ["Jah", "Ei"], )
+            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " loengus osaleda?", ["Jah", "Ei"])
             if osalemine:
                 easygui.msgbox("Käisid loengus, tubli!", "kiitused")
                 if skillid[tunniplaan[i]] < 100:
@@ -52,13 +51,11 @@ def day0ise():
     else:
         easygui.msgbox('Jätsid infotunnis käimata!', 'Väga halb!')
 
-
 def day1ise(tunniplaan, lp, skillid, märkmenädal):
     i = 0
     while i in range(len(lp)):
         if lp[i] == "loeng":
-            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " loengus osaleda?", "Järgmine päev",
-                                      ["Jah", "Ei"])
+            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " loengus osaleda?", "Loeng", ["Jah", "Ei"])
             if osalemine:
                 kirjutamine = easygui.ynbox("Kas soovid märkmeid teha?")
                 if kirjutamine:
@@ -67,25 +64,78 @@ def day1ise(tunniplaan, lp, skillid, märkmenädal):
                     i += 1
                 else:
                     easygui.msgbox("Sa ei teinud selles aines märkmeid.")
+                    i+=1
             else:
                 easygui.msgbox('Jätsid loengus käimata!', 'Väga halb!')
                 i += 1
         else:
-            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " praktikumis osaleda?",
-                                      "Järgmine päev")
+            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " praktikumis osaleda?","",["Jah","Ei"])
+            if osalemine:
+                kirjutamine = easygui.ynbox("Kas soovid teha märkmeid?", "Märkmed", ["Jah","Ei"])
+                if kirjutamine:
+                    easygui.msgbox("Tegid selles aines märkmeid")
+                    if skillid[tunniplaan[i]] < 100:
+                        skillid[tunniplaan[i]] += 5
+                        i+=1
+                    else:
+                        easygui.msgbox("Sa ei teinud selles aines märkmeid.")
+                        i+=1
+                else:
+                    easygui.msgbox("Jätsid praktikumis käimata! ", "Väga halb!")
+                    i += 1
+    return skillid, märkmed
+
+def daykontrolltöö(tunniplaan, lp, skillid, märkmenädal):
+    i = 0
+    punktid = 0
+    easygui.msgbox("Sul on täna Kõrgem Matemaatika aines kontrolltöö")
+    while i in range(len(lp)):
+        if lp[i] == "loeng":
+            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " loengus osaleda?", "loeng",  ["Jah", "Ei"])
             if osalemine:
                 kirjutamine = easygui.ynbox("Kas soovid märkmeid teha?")
                 if kirjutamine:
                     easygui.msgbox("Tegid aines " + tunniplaan[i].lower() + " märkmeid.")
-                    skillid[tunniplaan[i]] += 5
+                    märkmed[tunniplaan[i]] += märkmenädal[tunniplaan[i]]
                     i += 1
                 else:
                     easygui.msgbox("Sa ei teinud selles aines märkmeid.")
+                    i += 1
             else:
-                easygui.msgbox("Jätsid praktikumis käimata! ", "Väga halb!")
+                easygui.msgbox('Jätsid loengus käimata!', 'Väga halb!')
                 i += 1
-    easygui.textbox("Siin näed selle päeva jooksul loengutes tehtud märkmeid", "Tehtud märkmed", str(märkmed))
+        else:
+            if tunniplaan[i] == "Kõrgem matemaatika":
+                osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " praktikumis osaleda?","KONTROLLTÖÖ", ["Jah","Ei"])
+                if osalemine:
+                    kirjutamine = easygui.ynbox("Kas soovid märkmeid näha enne kontrolltöö alustamist?")
+                    if kirjutamine:
+                        easygui.msgbox(märkmed[tunniplaan[i]])
+                        kt1 = easygui.choicebox("Mis on ühikmaatriksi tähis?", "Esimene küsimus", ["A","B","C","D","E"])
+                        if kt1 == "E":
+                            punktid += 25
+                        kt2 = easygui.choicebox("Mis telje suhtes on paarisfunktsioon sümmeetriline?", "Teine küsimus",["x","y","z"])
+                        if kt2 == "y":
+                            punktid +=25
+                        kt3 = easygui.choicebox("Mille suhtes on paaritufunktsioon sümmeetriline?","Kolmas küsimus",["x-telje","nullpunkti","z-telje"])
+                        if kt3 == "nullpunkti":
+                            punktid +=25
+                        kt4 = easygui.choicebox("Mitu piirväärtust saab funktsioonil olla?", "Neljas küsimus", ["1","2","3"])
+                        if kt4 == "1":
+                            punktid +=25
+                        if punktid >= 50:
+                            easygui.msgbox("Tubli, said kontrolltööst edukalt läbi!")
+                        else:
+                            easygui.msgbox("Kukkusid kontrolltööst läbi!")
+                        i += 1
+                    else:
+                        easygui.msgbox("Sa ei teinud kontrolltööd kaasa.")
+                        i += 1
+                else:
+                    easygui.msgbox("Jätsid kontrolltööl käimata! Pead registreeruma järeltööle! ", "Väga halb!")
+                    i += 1
     return skillid, märkmed
+
 
 
 def esimene_nädal_ise(teisipäev, kolmapäev, neljapäev, reede, tlp, klp, nlp, rlp, skill, essanädal):
@@ -138,7 +188,7 @@ def kolmas_nädal_arvuti(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, 
 
 def neljas_nädal_ise(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, neljas_nädal):
     day1ise(esmaspäev, elp, skill, neljas_nädal)
-    day1ise(teisipäev, tlp, skill, neljas_nädal)
+    daykontrolltöö(teisipäev, tlp, skill, neljas_nädal)
     day1ise(kolmapäev, klp, skill, neljas_nädal)
     day1ise(neljapäev, nlp, skill, neljas_nädal)
     day1ise(reede, rlp, skill, neljas_nädal)

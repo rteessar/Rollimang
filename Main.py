@@ -12,12 +12,12 @@ klp = ["praktikum", "praktikum"]
 nlp = ["praktikum", "loeng", "praktikum"]
 rlp = ["praktikum", "loeng"]
 
-essanädal = {"Programmeerimine": "Pythonis saab joonistada turtle teegiga",
-             "Arvuti arhitektuur ja riistvara": "Vähim aeg protsessori jaoks on üks takt.",
-             "Kõrgem matemaatika": "Maatriksiks nimetatakse m reast ja n veerust koosnevat ristkülikukujulist arvude tabelit.",
+ktplaan = ['Programmeerimine', 'Arvuti arhitektuur ja riistvara', 'Kõrgem matemaatika']
+
+esimene_nädal= {"Arvuti arhitektuur ja riistvara": "Vähim aeg protsessori jaoks on üks takt.",
              "Arvuti arhitektuur ja riistvara2": "IBM projekteeris esimese PC arvuti.",
-             "Matemaatiline maailmapilt": "Matemaatika on kõikjal meie ümber. Kui me ei tunne matemaatika keelt, siis me suuda seda näha.",
-             "Sissejuhatus erialasse": "Esmakursuslaste konverents"}
+             "Sissejuhatus erialasse": "Esmakursuslaste konverents",
+                "Programmeerimine": "Pythonis saab joonistada kujundeid Turtle teegiga"}
 
 teine_nädal={"Programmeerimine": "Muutujaid, mille väärtust suurendatakse igal tsükli sammul ühe võrra, nimetatakse loenduriteks.",
              "Kõrgem matemaatika":"Suvalise n-järku ruutmaatriksi A korral kehtib AE = A, EA = A, kus E on n-järku ühikmaatriks.",
@@ -57,7 +57,7 @@ if not ise:
 elif ise:
     skill = {"Programmeerimine": 0, "Matemaatiline maailmapilt": 0, "Sissejuhatus erialasse": 0,
              "Kõrgem matemaatika": 0, "Arvuti arhitektuur ja riistvara": 0}
-    esimene_nädal_ise(teisipäev, kolmapäev, neljapäev, reede, tlp, klp, nlp, rlp, skill, essanädal)
+    esimene_nädal_ise(teisipäev, kolmapäev, neljapäev, reede, tlp, klp, nlp, rlp, skill, esimene_nädal)
     teine_nädal_ise(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, teine_nädal)
     kolmas_nädal_ise(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, kolmas_nädal)
     neljas_nädal_ise(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, neljas_nädal)
