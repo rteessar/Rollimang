@@ -12,33 +12,33 @@ klp = ["praktikum", "praktikum"]
 nlp = ["praktikum", "loeng", "praktikum"]
 rlp = ["praktikum", "loeng"]
 
-essanädal = {"Programmeerimine": "Pythonis saab joonistada turtle teegiga",
-             "Arvuti arhitektuur ja riistvara": "Vähim aeg protsessori jaoks on üks takt.",
-             "Kõrgem matemaatika": "Maatriksiks nimetatakse m reast ja n veerust koosnevat ristkülikukujulist arvude tabelit.",
-             "Arvuti arhitektuur ja riistvara2": "IBM projekteeris esimese PC arvuti.",
-             "Matemaatiline maailmapilt": "Matemaatika on kõikjal meie ümber. Kui me ei tunne matemaatika keelt, siis me suuda seda näha.",
-             "Sissejuhatus erialasse": "Esmakursuslaste konverents"}
+essanädal = {"Programmeerimine": "(Esimene loeng) Pythonis saab joonistada turtle teegiga. ",
+             "Arvuti arhitektuur ja riistvara": "(Esimene loeng) Vähim aeg protsessori jaoks on üks takt. ",
+             "Kõrgem matemaatika": "(Esimene loeng) Maatriksiks nimetatakse m reast ja n veerust koosnevat ristkülikukujulist arvude tabelit. ",
+             "Arvuti arhitektuur ja riistvara2": "(Esimene loeng) IBM projekteeris esimese PC arvuti. ",
+             "Matemaatiline maailmapilt": "(Esimene loeng) Matemaatika on kõikjal meie ümber. Kui me ei tunne matemaatika keelt, siis me suuda seda näha. ",
+             "Sissejuhatus erialasse": "(Esimene loeng) Esmakursuslaste konverents "}
 
-teine_nädal={"Programmeerimine": "Muutujaid, mille väärtust suurendatakse igal tsükli sammul ühe võrra, nimetatakse loenduriteks.",
-             "Kõrgem matemaatika":"Suvalise n-järku ruutmaatriksi A korral kehtib AE = A, EA = A, kus E on n-järku ühikmaatriks.",
-             "Matemaatiline maailmapilt":"Valem F on kehtestatav parajasti siis, kui tema eitus ¬F ei ole samaselt tõene.",
-             "Arvuti arhitektuur ja riistvara":"Mälu, mille poole protsessor saab pöörduda oma siinide kaudu nimetatakse füüsiliseks mäluks",
-             "Arvuti arhitektuur ja riistvara2":"Registrite suurus näitab ka mitme bitise protsessoriga on tegu",
-             "Sissejuhatus erialasse":"Do it for the love of passion not for money!"}
+teine_nädal={"Programmeerimine": "(Teine loeng) Muutujaid, mille väärtust suurendatakse igal tsükli sammul ühe võrra, nimetatakse loenduriteks.",
+             "Kõrgem matemaatika":"(Teine loeng) Suvalise n-järku ruutmaatriksi A korral kehtib AE = A, EA = A, kus E on n-järku ühikmaatriks.",
+             "Matemaatiline maailmapilt":"(Teine loeng) Valem F on kehtestatav parajasti siis, kui tema eitus ¬F ei ole samaselt tõene.",
+             "Arvuti arhitektuur ja riistvara":"(Teine loeng) Mälu, mille poole protsessor saab pöörduda oma siinide kaudu nimetatakse füüsiliseks mäluks",
+             "Arvuti arhitektuur ja riistvara2":"(Teine loeng) Registrite suurus näitab ka mitme bitise protsessoriga on tegu",
+             "Sissejuhatus erialasse":"(Teine loeng) Do it for the love of passion not for money!"}
 
-kolmas_nädal={"Programmeerimine": "Meetodeid ei ole vaja kunagi import-ida.",
-             "Kõrgem matemaatika":"Paarisfunktsioon on sümmeetriline y-telje suhtes. Paaritu funktsioon on sümmeetriline nullpunkti suhtes.",
-             "Matemaatiline maailmapilt":"Tühjaks hulgaks ∅ nimetatakse hulka, mis ei sisalda ühtegi elementi.",
-             "Arvuti arhitektuur ja riistvara":"Mälu ülesandeks on andmete ja programmide säilitamine.",
-             "Arvuti arhitektuur ja riistvara2":"Moore'i seadus põhineb arvutiriistvara ajalool ning ütleb, et mikrokiibil olevate transistoride arv kahekordistub iga kahe aasta järel.",
-             "Sissejuhatus erialasse":"Sinu eksamihinne on funktsioon ajast, mida sa panustad õpingutesse."}
+kolmas_nädal={"Programmeerimine": "(Kolmas loeng) Meetodeid ei ole vaja kunagi import-ida.",
+             "Kõrgem matemaatika":"(Kolmas loeng) Paarisfunktsioon on sümmeetriline y-telje suhtes. Paaritu funktsioon on sümmeetriline nullpunkti suhtes.",
+             "Matemaatiline maailmapilt":"(Kolmas loeng) Tühjaks hulgaks ∅ nimetatakse hulka, mis ei sisalda ühtegi elementi.",
+             "Arvuti arhitektuur ja riistvara":"(Kolmas loeng) Mälu ülesandeks on andmete ja programmide säilitamine.",
+             "Arvuti arhitektuur ja riistvara2":"(Kolmas loeng) Moore'i seadus põhineb arvutiriistvara ajalool ning ütleb, et mikrokiibil olevate transistoride arv kahekordistub iga kahe aasta järel.",
+             "Sissejuhatus erialasse":"(Kolmas loeng) Sinu eksamihinne on funktsioon ajast, mida sa panustad õpingutesse."}
 
-neljas_nädal={"Programmeerimine": "Python paneb lokaalsete muutujate nimekirja kokku funktsiooni koodis leiduvate omistuslausete põhjal.",
-             "Kõrgem matemaatika":"Piirväärtuse ühesus. Vaadeldavas protsessis saab funktsioonil olla ainult üks piirväärtus.",
-             "Matemaatiline maailmapilt":"Hulkade A ja B ühendiks nimetatakse hulka A ∪ B, A ∪ B = {x | x ∈ A ∨ x ∈ B}.",
-             "Arvuti arhitektuur ja riistvara":"Esimesena võeti pipeline kasutusele Intel 80486 protsessoris.",
-             "Arvuti arhitektuur ja riistvara2":"SLAT (Second Level Address Translation).",
-             "Sissejuhatus erialasse":"The first step: Don’t be anxious. Nature controls it all."}
+neljas_nädal={"Programmeerimine": "(Neljas loeng) Python paneb lokaalsete muutujate nimekirja kokku funktsiooni koodis leiduvate omistuslausete põhjal.",
+             "Kõrgem matemaatika":"(Neljas loeng) Piirväärtuse ühesus. Vaadeldavas protsessis saab funktsioonil olla ainult üks piirväärtus.",
+             "Matemaatiline maailmapilt":"(Neljas loeng) Hulkade A ja B ühendiks nimetatakse hulka A ∪ B, A ∪ B = {x | x ∈ A ∨ x ∈ B}.",
+             "Arvuti arhitektuur ja riistvara":"(Neljas loeng) Esimesena võeti pipeline kasutusele Intel 80486 protsessoris.",
+             "Arvuti arhitektuur ja riistvara2":"(Neljas loeng) SLAT (Second Level Address Translation).",
+             "Sissejuhatus erialasse":"(Neljas loeng) The first step: Don’t be anxious. Nature controls it all."}
 
 tutvustus = easygui.msgbox("""Tere tulemast Tartu ülikooli IT eriala simulatsiooni mängu. 
 Mäng põhineb Oskari ja Risto kogemusel ja nägemusel ülikoolist. Mängus saad käia loengutes, teha märkmeid ja
