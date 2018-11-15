@@ -50,19 +50,17 @@ ise = easygui.ynbox("Kas soovid ise õppida?", "Enne mängu", ["Ise", "Arvuti"])
 if not ise:
     skill = {"Programmeerimine": 0, "Matemaatiline maailmapilt": 0, "Sissejuhatus erialasse": 0,
              "Kõrgem matemaatika": 0, "Arvuti arhitektuur ja riistvara": 0}
-    day0arvuti()
-    day1arvuti(teisipäev, tlp, skill)
-    day1arvuti(kolmapäev, tlp, skill)
-    day1arvuti(neljapäev, tlp, skill)
-    day1arvuti(reede, tlp, skill)
+    esimene_nädal_arvuti(teisipäev, kolmapäev, neljapäev, reede, tlp, klp, nlp, rlp, skill)
+    teine_nädal_arvuti(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill)
+    kolmas_nädal_arvuti(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill)
+    neljas_nädal_arvuti(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill)
 elif ise:
     skill = {"Programmeerimine": 0, "Matemaatiline maailmapilt": 0, "Sissejuhatus erialasse": 0,
              "Kõrgem matemaatika": 0, "Arvuti arhitektuur ja riistvara": 0}
-    day0ise()
-    day1ise(teisipäev, tlp, skill, essanädal)
-    day1ise(kolmapäev, klp, skill, essanädal)
-    day1ise(neljapäev, nlp, skill, essanädal)
-    day1ise(reede, rlp, skill, essanädal)
+    esimene_nädal_ise(teisipäev, kolmapäev, neljapäev, reede, tlp, klp, nlp, rlp, skill, essanädal)
+    teine_nädal_ise(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, teine_nädal)
+    kolmas_nädal_ise(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, kolmas_nädal)
+    neljas_nädal_ise(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, neljas_nädal)
 
 # ISE ÕPPIDES:
 # Saab valida sugu, vastavalt soole saad õppejõude võrgutada

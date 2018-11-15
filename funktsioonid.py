@@ -84,5 +84,69 @@ def day1ise(tunniplaan, lp, skillid, märkmenädal):
             else:
                 easygui.msgbox("Jätsid praktikumis käimata! ", "Väga halb!")
                 i += 1
-    easygui.textbox("Siin näed selle päeva jooksul erinevates loengutes tehtud märkmeid","Tehtud märkmed",str(märkmed))
+    easygui.textbox("Siin näed selle päeva jooksul loengutes tehtud märkmeid", "Tehtud märkmed", str(märkmed))
     return skillid, märkmed
+
+
+def esimene_nädal_ise(teisipäev, kolmapäev, neljapäev, reede, tlp, klp, nlp, rlp, skill, essanädal):
+    day0ise()
+    day1ise(teisipäev, tlp, skill, essanädal)
+    day1ise(kolmapäev, klp, skill, essanädal)
+    day1ise(neljapäev, nlp, skill, essanädal)
+    day1ise(reede, rlp, skill, essanädal)
+
+
+def esimene_nädal_arvuti(teisipäev, kolmapäev, neljapäev, reede, tlp, klp, nlp, rlp, skill):
+    day0arvuti()
+    day1arvuti(teisipäev, tlp, skill)
+    day1arvuti(kolmapäev, klp, skill)
+    day1arvuti(neljapäev, nlp, skill)
+    day1arvuti(reede, rlp, skill)
+
+
+def teine_nädal_ise(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, teine_nädal):
+    day1ise(esmaspäev, elp, skill, teine_nädal)
+    day1ise(teisipäev, tlp, skill, teine_nädal)
+    day1ise(kolmapäev, klp, skill, teine_nädal)
+    day1ise(neljapäev, nlp, skill, teine_nädal)
+    day1ise(reede, rlp, skill, teine_nädal)
+
+
+def teine_nädal_arvuti(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill):
+    day1arvuti(esmaspäev, elp, skill)
+    day1arvuti(teisipäev, tlp, skill)
+    day1arvuti(kolmapäev, klp, skill)
+    day1arvuti(neljapäev, nlp, skill)
+    day1arvuti(reede, rlp, skill)
+
+
+def kolmas_nädal_ise(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, kolmas_nädal):
+    day1ise(esmaspäev, elp, skill, kolmas_nädal)
+    day1ise(teisipäev, tlp, skill, kolmas_nädal)
+    day1ise(kolmapäev, klp, skill, kolmas_nädal)
+    day1ise(neljapäev, nlp, skill, kolmas_nädal)
+    day1ise(reede, rlp, skill, kolmas_nädal)
+
+
+def kolmas_nädal_arvuti(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill):
+    day1arvuti(esmaspäev, elp, skill)
+    day1arvuti(teisipäev, tlp, skill)
+    day1arvuti(kolmapäev, klp, skill)
+    day1arvuti(neljapäev, nlp, skill)
+    day1arvuti(reede, rlp, skill)
+
+
+def neljas_nädal_ise(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, neljas_nädal):
+    day1ise(esmaspäev, elp, skill, neljas_nädal)
+    day1ise(teisipäev, tlp, skill, neljas_nädal)
+    day1ise(kolmapäev, klp, skill, neljas_nädal)
+    day1ise(neljapäev, nlp, skill, neljas_nädal)
+    day1ise(reede, rlp, skill, neljas_nädal)
+
+
+def neljas_nädal_arvuti(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill):
+    day1arvuti(esmaspäev, elp, skill)
+    day1arvuti(teisipäev, tlp, skill)
+    day1arvuti(kolmapäev, klp, skill)
+    day1arvuti(neljapäev, nlp, skill)
+    day1arvuti(reede, rlp, skill)
