@@ -5,9 +5,9 @@ märkmed = {"Infotund": "", "Kõrgem matemaatika": "", "Arvuti arhitektuur ja ri
 
 
 def day0arvuti():
-    osalemine = easygui.ynbox("Kas tahad infotunnis osaleda?", "Esimene päev", ["Jah", "Ei"])
+    osalemine = easygui.ynbox("Kas tahad infotunnis osaleda?", "Esimene päev", ["Jah", "Ei"], image="pildid/vanemuine46.png")
     if osalemine:
-        easygui.msgbox("Käisid infotunnis, tubli!", "kiitused")
+        easygui.msgbox("Käisid infotunnis, tubli!", "Infotund")
     else:
         easygui.msgbox('Jätsid infotunnis käimata!', 'Väga halb!')
 
@@ -16,9 +16,10 @@ def day1arvuti(tunniplaan, lp, skillid):
     i = 0
     while i in range(len(lp)):
         if lp[i] == "loeng":
-            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " loengus osaleda?", ["Jah", "Ei"])
+            pilt = "pildid/" + tunniplaan[i] + "-loeng" + ".png"
+            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " loengus osaleda?", "Esimene päev", ["Jah", "Ei"])
             if osalemine:
-                easygui.msgbox("Käisid loengus, tubli!", "kiitused")
+                easygui.msgbox("",tunniplaan[i], image=pilt)
                 if skillid[tunniplaan[i]] < 100:
                     skillid[tunniplaan[i]] += 1
                     i += 1
@@ -26,8 +27,9 @@ def day1arvuti(tunniplaan, lp, skillid):
                 easygui.msgbox('Jätsid loengus käimata!', 'Väga halb!')
                 i += 1
         else:
+
             osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " praktikumis osaleda?",
-                                      "Järgmine päev")
+                                      "Järgmine päev", ["Jah", "Ei"])
             if osalemine:
                 easygui.msgbox("Käisid praktikumis, tubli!", "Kiitused")
                 if skillid[tunniplaan[i]] < 100:
@@ -40,9 +42,9 @@ def day1arvuti(tunniplaan, lp, skillid):
 
 
 def day0ise():
-    osalemine = easygui.ynbox("Kas tahad infotunnis osaleda?", "Esimene päev", ["Jah", "Ei"])
+    osalemine = easygui.ynbox("Kas tahad infotunnis osaleda?", "Infotund", ["Jah", "Ei"], image="pildid/vanemuine46.png")
     if osalemine:
-        kirjutamine = easygui.ynbox("Kas soovid märkmeid teha?")
+        kirjutamine = easygui.ynbox("Kas soovid märkmeid teha?", "Märkmed", ["Jah", "Ei"])
         if kirjutamine:
             easygui.msgbox("Tegid infotunnis märkmeid.")
             märkmed["Infotund"] += " Ainetele ja eksamitele registreerimine ÕIS'is"
@@ -51,39 +53,37 @@ def day0ise():
     else:
         easygui.msgbox('Jätsid infotunnis käimata!', 'Väga halb!')
 
+
 def day1ise(tunniplaan, lp, skillid, märkmenädal):
     i = 0
     while i in range(len(lp)):
         if lp[i] == "loeng":
-            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " loengus osaleda?", "Loeng", ["Jah", "Ei"])
+            pilt = "pildid/" + tunniplaan[i] + "-loeng" + ".png"
+            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " loengus osaleda?", "Loeng",
+                                      ["Jah", "Ei"])
             if osalemine:
-                kirjutamine = easygui.ynbox("Kas soovid märkmeid teha?")
+                kirjutamine = easygui.ynbox("Kas soovid märkmeid teha?", "Märkmed", ["Jah", "Ei"], image=pilt)
                 if kirjutamine:
-                    easygui.msgbox("Tegid aines " + tunniplaan[i].lower() + " märkmeid.")
                     märkmed[tunniplaan[i]] += märkmenädal[tunniplaan[i]]
-                    i += 1
-                else:
-                    easygui.msgbox("Sa ei teinud selles aines märkmeid.")
-                    i+=1
+                i += 1
             else:
                 easygui.msgbox('Jätsid loengus käimata!', 'Väga halb!')
                 i += 1
         else:
-            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " praktikumis osaleda?","",["Jah","Ei"])
+
+            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " praktikumis osaleda?", "",
+                                      ["Jah", "Ei"])
             if osalemine:
-                kirjutamine = easygui.ynbox("Kas soovid teha märkmeid?", "Märkmed", ["Jah","Ei"])
+                kirjutamine = easygui.ynbox("Kas soovid teha märkmeid?", "Märkmed", ["Jah", "Ei"])
                 if kirjutamine:
-                    easygui.msgbox("Tegid selles aines märkmeid")
                     if skillid[tunniplaan[i]] < 100:
                         skillid[tunniplaan[i]] += 5
-                        i+=1
-                    else:
-                        easygui.msgbox("Sa ei teinud selles aines märkmeid.")
-                        i+=1
+                    i += 1
                 else:
                     easygui.msgbox("Jätsid praktikumis käimata! ", "Väga halb!")
                     i += 1
     return skillid, märkmed
+
 
 def daykontrolltöö(tunniplaan, lp, skillid, märkmenädal):
     i = 0
@@ -91,38 +91,40 @@ def daykontrolltöö(tunniplaan, lp, skillid, märkmenädal):
     easygui.msgbox("Sul on täna Kõrgem Matemaatika aines kontrolltöö")
     while i in range(len(lp)):
         if lp[i] == "loeng":
-            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " loengus osaleda?", "loeng",  ["Jah", "Ei"])
+            osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " loengus osaleda?", "loeng",
+                                      ["Jah", "Ei"])
             if osalemine:
                 kirjutamine = easygui.ynbox("Kas soovid märkmeid teha?")
                 if kirjutamine:
-                    easygui.msgbox("Tegid aines " + tunniplaan[i].lower() + " märkmeid.")
                     märkmed[tunniplaan[i]] += märkmenädal[tunniplaan[i]]
-                    i += 1
-                else:
-                    easygui.msgbox("Sa ei teinud selles aines märkmeid.")
-                    i += 1
+                i += 1
             else:
                 easygui.msgbox('Jätsid loengus käimata!', 'Väga halb!')
                 i += 1
         else:
             if tunniplaan[i] == "Kõrgem matemaatika":
-                osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " praktikumis osaleda?","KONTROLLTÖÖ", ["Jah","Ei"])
+                osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " praktikumis osaleda?",
+                                          "KONTROLLTÖÖ", ["Jah", "Ei"])
                 if osalemine:
                     kirjutamine = easygui.ynbox("Kas soovid märkmeid näha enne kontrolltöö alustamist?")
                     if kirjutamine:
                         easygui.msgbox(märkmed[tunniplaan[i]])
-                        kt1 = easygui.choicebox("Mis on ühikmaatriksi tähis?", "Esimene küsimus", ["A","B","C","D","E"])
+                        kt1 = easygui.choicebox("Mis on ühikmaatriksi tähis?", "Esimene küsimus",
+                                                ["A", "B", "C", "D", "E"])
                         if kt1 == "E":
                             punktid += 25
-                        kt2 = easygui.choicebox("Mis telje suhtes on paarisfunktsioon sümmeetriline?", "Teine küsimus",["x","y","z"])
+                        kt2 = easygui.choicebox("Mis telje suhtes on paarisfunktsioon sümmeetriline?", "Teine küsimus",
+                                                ["x", "y", "z"])
                         if kt2 == "y":
-                            punktid +=25
-                        kt3 = easygui.choicebox("Mille suhtes on paaritufunktsioon sümmeetriline?","Kolmas küsimus",["x-telje","nullpunkti","z-telje"])
+                            punktid += 25
+                        kt3 = easygui.choicebox("Mille suhtes on paaritufunktsioon sümmeetriline?", "Kolmas küsimus",
+                                                ["x-telje", "nullpunkti", "z-telje"])
                         if kt3 == "nullpunkti":
-                            punktid +=25
-                        kt4 = easygui.choicebox("Mitu piirväärtust saab funktsioonil olla?", "Neljas küsimus", ["1","2","3"])
+                            punktid += 25
+                        kt4 = easygui.choicebox("Mitu piirväärtust saab funktsioonil olla?", "Neljas küsimus",
+                                                ["1", "2", "3"])
                         if kt4 == "1":
-                            punktid +=25
+                            punktid += 25
                         if punktid >= 50:
                             easygui.msgbox("Tubli, said kontrolltööst edukalt läbi!")
                         else:
@@ -135,7 +137,6 @@ def daykontrolltöö(tunniplaan, lp, skillid, märkmenädal):
                     easygui.msgbox("Jätsid kontrolltööl käimata! Pead registreeruma järeltööle! ", "Väga halb!")
                     i += 1
     return skillid, märkmed
-
 
 
 def esimene_nädal_ise(teisipäev, kolmapäev, neljapäev, reede, tlp, klp, nlp, rlp, skill, essanädal):
@@ -200,4 +201,3 @@ def neljas_nädal_arvuti(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, 
     day1arvuti(kolmapäev, klp, skill)
     day1arvuti(neljapäev, nlp, skill)
     day1arvuti(reede, rlp, skill)
-

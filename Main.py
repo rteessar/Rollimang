@@ -64,18 +64,3 @@ elif ise:
     kolmas_nädal_ise(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, kolmas_nädal)
     neljas_nädal_ise(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, neljas_nädal)
 
-# ISE ÕPPIDES:
-# Saab valida sugu, vastavalt soole saad õppejõude võrgutada
-# saab valida kuidas ülikooli astunud, erinevad võimalused annavad erinevaid boonuseid
-# Saab teha loengutes märkmeid enda jaoks, loengus saab teha märkmeid enne kt saab vaadata märkmeid
-# Ainetele registreerimine
-# Saab valida mis kell ärgata tahab järgmisel päeval ja kui ei ärka õigel ajal siis magab loengu maha
-
-# Arvuti õpib:
-# Saab valida sugu, vastavalt soole saad õppejõude võrgutada
-# saab valida kuidas ülikooli astunud, erinevad võimalused annavad erinevaid boonuseid
-# Arvuti kalkuleerib kontrolltööst läbisaamise protsendi
-# Saab valida mis kell ärgata tahab järgmisel päeval ja kui ei ärka õigel ajal siis magab loengu maha
-
-# ÜLDINE:
-# Esimene box on mängu kirjeldus, mis asi kus on.
