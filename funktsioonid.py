@@ -88,7 +88,7 @@ def day1ise(tunniplaan, lp, skillid, märkmenädal):
 def daykontrolltöö(tunniplaan, lp, skillid, märkmenädal):
     i = 0
     punktid = 0
-    easygui.msgbox("Sul on täna Kõrgem Matemaatika aines kontrolltöö")
+    easygui.msgbox("Sul on täna aines kõrgem matemaatika kontrolltöö")
     while i in range(len(lp)):
         if lp[i] == "loeng":
             osalemine = easygui.ynbox("Kas tahad aine " + tunniplaan[i].lower() + " loengus osaleda?", "loeng",
@@ -108,7 +108,7 @@ def daykontrolltöö(tunniplaan, lp, skillid, märkmenädal):
                 if osalemine:
                     kirjutamine = easygui.ynbox("Kas soovid märkmeid näha enne kontrolltöö alustamist?")
                     if kirjutamine:
-                        easygui.msgbox(märkmed[tunniplaan[i]])
+                        easygui.textbox("Märkmed","Märkmed",märkmed[tunniplaan[i]])
                         kt1 = easygui.choicebox("Mis on ühikmaatriksi tähis?", "Esimene küsimus",
                                                 ["A", "B", "C", "D", "E"])
                         if kt1 == "E":
@@ -145,6 +145,8 @@ def esimene_nädal_ise(teisipäev, kolmapäev, neljapäev, reede, tlp, klp, nlp,
     day1ise(kolmapäev, klp, skill, essanädal)
     day1ise(neljapäev, nlp, skill, essanädal)
     day1ise(reede, rlp, skill, essanädal)
+
+
 
 
 def esimene_nädal_arvuti(teisipäev, kolmapäev, neljapäev, reede, tlp, klp, nlp, rlp, skill):
