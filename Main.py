@@ -60,6 +60,9 @@ if not ise:
     kolmas_nädal_arvuti(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, pn)
     pn += 1
     neljas_nädal_arvuti(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, pn)
+    lõpp = easygui.msgbox("""Sinu esimene kuu ülikoolis on sellega läbi. Siin näed nüüd palju punkte sa igas aines kogusid"
+     %s  """ % (str(skill)), "Lõpp",
+                   ok_button="Aitäh mängimast!")
 elif ise:
     skill = {"Programmeerimine": 0, "Matemaatiline maailmapilt": 0, "Sissejuhatus erialasse": 0,
              "Kõrgem matemaatika": 0, "Arvuti arhitektuur ja riistvara": 0}
@@ -71,4 +74,7 @@ elif ise:
     pn += 1
     neljas_nädal_ise(esmaspäev, teisipäev, kolmapäev, neljapäev, reede, elp, tlp, klp, nlp, rlp, skill, neljas_nädal, pn)
     pn += 1
+    lõpp = easygui.msgbox("""Sinu esimene kuu ülikoolis on sellega läbi. Siin näed nüüd palju punkte sa igas aines kogusid"
+     %s  """ % (str(skill)), "Lõpp",
+                   ok_button="Aitäh mängimast!")
 
